@@ -9,11 +9,6 @@ export default function App() {
   const [runners, setRunners] = useState([])
   const [startTime, setStartTime] = useState()
   const [isRunOver, setIsRunOver] = useState(false)
-  // const [isRunning, setIsRunning] = useState(false)
-
-  // function handleRunning(bool) {
-  //   setIsRunning(bool)
-  // }
 
   function stopRun() {
     setIsRunOver(true)
@@ -21,6 +16,12 @@ export default function App() {
 
   function startTimer() {
     setStartTime(Date.now())
+  }
+
+  function reset() {
+    setIsRunOver(false)
+    setStartTime(null)
+    setRunners([])
   }
 
   function logLap(runner) {
@@ -49,18 +50,17 @@ export default function App() {
     ])
   }
 
-  // console.log(runners)
-
   return (
     <div className="container">
-      <Tracker runners={runners} startTime={startTime} logLap={logLap} />
+      <Tracker runners={runners} logLap={logLap} isRunOver={isRunOver} />
       <Controls
         addRunner={addRunner}
         startTime={startTime}
         startTimer={startTimer}
         stopRun={stopRun}
+        isRunOver={isRunOver}
       />
-      {isRunOver && <Results runners={runners} />}
+      {isRunOver && <Results runners={runners} reset={reset} />}
     </div>
   )
 }

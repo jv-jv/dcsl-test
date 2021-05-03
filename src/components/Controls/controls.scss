@@ -1,31 +1,40 @@
 .controls {
   border: 1px solid var(--border);
-  border-radius: var(--br-m);
+  border-radius: var(--br-s);
 
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  align-items: center;
 
   @media (min-width: 600px) {
     flex-direction: row;
   }
-  align-items: center;
 
   color: var(--primary);
 
   &__title {
     font-size: var(--large);
     font-weight: 500;
-    margin: 0 1em;
+
+    margin: 0.5em 0.5em 0 0.5em;
   }
 
   &__add-runner {
-    margin: 0 1em;
-
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+    }
+
     input {
-      margin-right: 1em;
+      margin: 1em 0;
+      border: 1px solid var(--border);
+      border-radius: var(--br-s);
+
+      @media (min-width: 600px) {
+        margin: 0 1em 0 0;
+      }
     }
 
     .btn--add {
@@ -34,23 +43,20 @@
   }
 
   &__commands {
-    // margin: 0 1em;
+    display: flex;
+    margin: 1em;
 
     .btn--start {
-      margin: 0.5em;
-
-      margin-right: 1em;
+      margin-right: 0.5em;
       background-color: var(--start);
     }
 
     .btn--end {
-      margin: 0.5em;
-
       background-color: var(--stop);
+    }
+
+    &__time {
+      // padding: 1em;
     }
   }
 }
-
-// .btn {
-//   border: none;
-// }

@@ -38,7 +38,7 @@
 import React from "react"
 import "./tracker.scss"
 import { timeToString } from "../../utils"
-export default function Tracker({ runners, startTime, logLap }) {
+export default function Tracker({ runners, logLap, isRunOver }) {
   return (
     <table className="table">
       <thead className="table__header">
@@ -58,6 +58,7 @@ export default function Tracker({ runners, startTime, logLap }) {
               <td>
                 <button
                   className="btn btn--runner"
+                  disabled={isRunOver}
                   onClick={() => logLap(runner)}
                 >
                   {runner.name}

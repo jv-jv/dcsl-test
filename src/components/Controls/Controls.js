@@ -8,6 +8,7 @@ export default function Controls({
   startTime,
   startTimer,
   stopRun,
+  isRunOver,
 }) {
   const [nameInput, setNameInput] = useState("")
 
@@ -41,14 +42,14 @@ export default function Controls({
           onSubmit={(e) => handleAddSubmit(e)}
         >
           <input value={nameInput} onChange={(e) => handleChange(e)} />
-          <button disabled={isRunning} className="btn btn--add">
+          <button disabled={isRunning || isRunOver} className="btn btn--add">
             Add Name
           </button>
         </form>
         <form className="controls__commands">
           <button
             className="btn btn--start"
-            disabled={isRunning}
+            disabled={isRunning || isRunOver}
             onClick={(e) => {
               e.preventDefault()
               startTimer()
@@ -68,14 +69,8 @@ export default function Controls({
             End Race
           </button>
         </form>
-        <p className="controls__time">Time passed: {displayedTime}</p>
+        <p className="controls__time">{displayedTime}</p>
       </div>
-
-      {/* <div>start: {startTime}</div>
-      <div>current: {currentTime}</div>
-      <div>diff: {currentTime - startTime}</div>
-      <div>formatted: {timeToString(currentTime - startTime)}</div>
-      <div>pretend average: {timeToString((currentTime - startTime) / 3)}</div> */}
     </>
   )
 }

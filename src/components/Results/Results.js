@@ -1,7 +1,7 @@
 import React from "react"
-// import { timeToString } from "../../utils"
+import { timeToString } from "../../utils"
 
-export default function Results({ runners }) {
+export default function Results({ runners, reset }) {
   // 1. The name of the competitor that had the highest lap count and lowest overall time
 
   // I wasn't entirely clear on the requirements to win.
@@ -36,22 +36,28 @@ export default function Results({ runners }) {
   return (
     <>
       {runners.every((runner) => runner.numLaps === 0) ? (
-        "The runners have not run"
+        <p>The runners have not run</p>
       ) : (
         <>
-          <div>
-            {bestLapTimeRunner.name} - {bestLapTimeRunner.bestLap}{" "}
-          </div>
+          <p>
+            The competitor that had the highest lap count and lowest overall
+            time is
+            <strong> {highestLapLowestTime().name} </strong>
+            with
+            <strong> {highestLapLowestTime().numLaps} </strong> laps and
+            <strong> {timeToString(highestLapLowestTime().totalTime)} </strong>
+          </p>
 
-          <div>
-            {" "}
-            winner {highestLapLowestTime().name} laps:{" "}
-            {highestLapLowestTime().numLaps}
-            {" time:"}
-            {highestLapLowestTime().totalTime}
-          </div>
+          <p>
+            The competitor with the fastest (completed) lap is
+            <strong> {bestLapTimeRunner.name} </strong> with
+            <strong> {timeToString(bestLapTimeRunner.bestLap)} </strong>
+          </p>
         </>
       )}
+      <button onClick={reset} className="btn">
+        Reset
+      </button>
     </>
   )
 }
