@@ -1,0 +1,56 @@
+.controls {
+  border: 1px solid var(--border);
+  border-radius: var(--br-m);
+
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
+  align-items: center;
+
+  color: var(--primary);
+
+  &__title {
+    font-size: var(--large);
+    font-weight: 500;
+    margin: 0 1em;
+  }
+
+  &__add-runner {
+    margin: 0 1em;
+
+    display: flex;
+    flex-direction: row;
+    input {
+      margin-right: 1em;
+    }
+
+    .btn--add {
+      background-color: var(--add);
+    }
+  }
+
+  &__commands {
+    // margin: 0 1em;
+
+    .btn--start {
+      margin: 0.5em;
+
+      margin-right: 1em;
+      background-color: var(--start);
+    }
+
+    .btn--end {
+      margin: 0.5em;
+
+      background-color: var(--stop);
+    }
+  }
+}
+
+// .btn {
+//   border: none;
+// }
