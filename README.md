@@ -1,3 +1,24 @@
+You can see the production version on https://dcsl-test.vercel.app/
+
+I wasn't able to provide a version of my code that does not need to be initialised with npm.
+
+Unfortunately, I do not know of a way of fully using React without a bundler.
+Apologies for the inconvenience.
+
+I have deployed a copy of the code on https://dcsl-test.vercel.app/
+
+I hope this will be fine.
+
+Thanks for your time.
+
+.
+.
+.
+.
+.
+.
+.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
