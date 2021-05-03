@@ -26,7 +26,7 @@ export default function App() {
 
   function logLap(runner) {
     setRunners((prevState) => [
-      ...prevState.filter((e) => e.name !== runner.name),
+      ...prevState.filter((e) => e.id !== runner.id),
       {
         ...runner,
         numLaps: runner.numLaps + 1,
@@ -38,6 +38,7 @@ export default function App() {
 
   function addRunner(name) {
     if (!name.trim()) return
+
     setRunners((prevState) => [
       ...prevState,
       {

@@ -11,8 +11,7 @@ export default function Controls({
   isRunOver,
 }) {
   const [nameInput, setNameInput] = useState("")
-
-  const [displayedTime, setDisplayedTime] = useState("00: 00 : 00.000")
+  const [displayedTime, setDisplayedTime] = useState("0:0.000")
   const [isRunning, setIsRunning] = useState(false)
 
   useInterval(
@@ -22,7 +21,7 @@ export default function Controls({
     isRunning ? 1 : null
   )
 
-  function handleChange(e) {
+  function handleInputChange(e) {
     const { value } = e.target
     setNameInput(value)
   }
@@ -41,7 +40,11 @@ export default function Controls({
           className="controls__add-runner"
           onSubmit={(e) => handleAddSubmit(e)}
         >
-          <input value={nameInput} onChange={(e) => handleChange(e)} />
+          <input
+            value={nameInput}
+            disabled={isRunning || isRunOver}
+            onChange={(e) => handleInputChange(e)}
+          />
           <button disabled={isRunning || isRunOver} className="btn btn--add">
             Add Name
           </button>

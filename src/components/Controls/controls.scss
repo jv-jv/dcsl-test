@@ -1,7 +1,4 @@
 .controls {
-  border: 1px solid var(--border);
-  border-radius: var(--br-s);
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,13 +7,20 @@
     flex-direction: row;
   }
 
+  border: 1px solid var(--border);
+  border-radius: var(--br-s);
+
   color: var(--primary);
 
   &__title {
+    margin: 0.5em 0.5em 0 0.5em;
+
+    @media (min-width: 600px) {
+      margin: 0.5em;
+    }
+
     font-size: var(--large);
     font-weight: 500;
-
-    margin: 0.5em 0.5em 0 0.5em;
   }
 
   &__add-runner {
@@ -29,12 +33,13 @@
 
     input {
       margin: 1em 0;
-      border: 1px solid var(--border);
-      border-radius: var(--br-s);
 
       @media (min-width: 600px) {
         margin: 0 1em 0 0;
       }
+
+      border: 1px solid var(--border);
+      border-radius: var(--br-s);
     }
 
     .btn--add {
@@ -53,10 +58,6 @@
 
     .btn--end {
       background-color: var(--stop);
-    }
-
-    &__time {
-      // padding: 1em;
     }
   }
 }

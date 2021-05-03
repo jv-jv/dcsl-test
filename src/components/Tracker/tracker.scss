@@ -1,38 +1,16 @@
-// .table {
-//   //   border: 1px solid red;
-
-//   margin: 1rem 0;
-
-//   &__header {
-//     width: 100%;
-//     display: grid;
-//     grid-template-columns: repeat(5, 1fr);
-//     // display: flex;
-//     // justify-content: space-evenly;
-
-//     & > span {
-//       border: 0.3px solid #dadada;
-//       //   justify-self: center;
-//       text-align: center;
-//     }
-//   }
-// }
-
 .table {
   margin: 1rem 0;
-
-  width: 100%;
   border-collapse: collapse;
+  width: 100%;
 
-  th {
-    border: 1px solid var(--border);
-    text-align: start;
-    padding: 0.5em;
-  }
-
+  th,
   td {
     border: 1px solid var(--border);
     padding: 0.5em;
+  }
+
+  th {
+    text-align: start;
   }
 }
 

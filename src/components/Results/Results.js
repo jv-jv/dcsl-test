@@ -24,7 +24,6 @@ export default function Results({ runners, reset }) {
 
   // 2. The name of the competitor with the fastest (completed) lap and the time taken for it
   const allLapsTimes = runners.map((runner) => ({
-    id: runner.id,
     name: runner.name,
     bestLap: Math.min(...runner.laps),
   }))
@@ -55,7 +54,7 @@ export default function Results({ runners, reset }) {
           </p>
         </>
       )}
-      <button onClick={reset} className="btn">
+      <button onClick={reset} className="btn btn--reset">
         Reset
       </button>
     </>
